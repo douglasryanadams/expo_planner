@@ -14,6 +14,7 @@ clean:
 	rm -f tmp.db
 
 format: env
+	uv run ruff check --fix .
 	uv run ruff format .
 
 lint: format
