@@ -1,0 +1,18 @@
+[project]
+name = "expo-planner"
+version = "0.1.0"
+description = "Helps plan attendance for conventions and expos with complicated panel ticketing requirements"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi[standard]>=0.127.0",
+    "httpx>=0.28.1",
+    "loguru>=0.7.3",
+    "ruff>=0.14.10",
+    "sqlmodel>=0.0.27",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.2",
+]

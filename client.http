@@ -1,0 +1,17 @@
+### GET Conferences
+GET http://localhost:8000/conference
+
+### POST Conference
+# @name conference
+POST http://localhost:8000/conference
+Content-Type: application/json
+
+{
+    "name": "Test Expo",
+    "location": "Cleveland, OH",
+    "start_date" : "1986-09-24",
+    "end_date": "2025-12-25"
+}
+
+### GET Conference
+GET http://localhost:8000/conference/1
