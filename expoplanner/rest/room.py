@@ -5,7 +5,7 @@ from sqlmodel import select, delete
 from expoplanner.model import Room, RoomTable, RoomBase
 from expoplanner.dependency import DBSession
 
-room_api = APIRouter(prefix="/room")
+room_api = APIRouter(prefix="/rest/room")
 
 
 @room_api.post("/")

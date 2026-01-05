@@ -2,9 +2,8 @@ from fastapi.testclient import TestClient
 
 
 def test_room(client: TestClient) -> None:
-    # First create a conference because room has a foreign key to conference
     conf_response = client.post(
-        "/conference",
+        "/rest/conference",
         json={
             "name": "Test Conference",
             "location": "Test Location",
@@ -16,7 +15,7 @@ def test_room(client: TestClient) -> None:
     conference = conf_response.json()
 
     create_response = client.post(
-        "/room",
+        "/rest/room",
         json={
             "label": "Room A",
             "location": "First Floor",
@@ -27,13 +26,13 @@ def test_room(client: TestClient) -> None:
     create_response.raise_for_status()
     new_room = create_response.json()
 
-    get_response = client.get(f"/room/{new_room['id']}")
+    get_response = client.get(f"/rest/room/{new_room['id']}")
     get_response.raise_for_status()
     assert get_response.json() == new_room
 
-    delete_response = client.delete(f"/room/{new_room['id']}")
+    delete_response = client.delete(f"/rest/room/{new_room['id']}")
     delete_response.raise_for_status()
 
-    get_response = client.get(f"/room/{new_room['id']}")
+    get_response = client.get(f"/rest/room/{new_room['id']}")
     get_response.raise_for_status()
     assert get_response.json() is None

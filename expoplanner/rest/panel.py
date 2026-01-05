@@ -5,7 +5,7 @@ from sqlmodel import select, delete
 from expoplanner.model import Panel, PanelTable, PanelBase
 from expoplanner.dependency import DBSession
 
-panel_api = APIRouter(prefix="/panel")
+panel_api = APIRouter(prefix="/rest/panel")
 
 
 @panel_api.post("/")

@@ -6,7 +6,8 @@ from loguru import logger
 from sqlmodel import SQLModel
 
 from expoplanner.model import engine
-from expoplanner.view import conference, room, attendee, presenter, panel
+from expoplanner.rest import conference, room, attendee, presenter, panel
+from expoplanner.view.registration import registration
 
 
 def configure_logging():
@@ -37,6 +38,7 @@ app.include_router(room.room_api)
 app.include_router(attendee.attendee_api)
 app.include_router(presenter.presenter_api)
 app.include_router(panel.panel_api)
+app.include_router(registration)
 
 
 @app.get("/")

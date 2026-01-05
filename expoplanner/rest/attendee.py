@@ -5,7 +5,7 @@ from sqlmodel import select, delete
 from expoplanner.model import Attendee, AttendeeTable, AttendeeBase
 from expoplanner.dependency import DBSession
 
-attendee_api = APIRouter(prefix="/attendee")
+attendee_api = APIRouter(prefix="/rest/attendee")
 
 
 @attendee_api.post("/")
